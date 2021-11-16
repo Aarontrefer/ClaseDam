@@ -18,13 +18,9 @@ public class Alumno {
         if(nombre.length() < 3){
              System.out.println("Tu nombre es menor a 3 caracteres");
         }
-        else{
-        }
         
         if(numeroMatricula.length() < 4){
              System.out.println("Tu numero de matricula es menor a 4 caracteres");
-        }
-        else{
         }
     }
 
@@ -54,6 +50,21 @@ public class Alumno {
      * en su cuenta de Github en formato de 7 caracateres
      */
     public String getNombreUsuarioGithub() {
-        return nombre.substring(0, 3) + numeroMatricula.substring(0, 4);
+        String nombreUsuario = nombre + numeroMatricula;
+        if(nombre.length()>2){
+            nombreUsuario = nombre.substring(0, 3) + numeroMatricula;
+        }
+        
+        if(numeroMatricula.length()>3){
+            nombreUsuario = nombre + numeroMatricula.substring(0, 4);
+        }
+        
+        if (nombre.length()>2){
+            if(numeroMatricula.length()>3){
+                nombreUsuario = nombre.substring(0, 3) + numeroMatricula.substring(0, 4);
+            }
+        }
+            
+        return nombreUsuario;
     }
 }
