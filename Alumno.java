@@ -31,6 +31,14 @@ public class Alumno {
         return nombre;
     }  
     
+    public String getNumeroMatricula(){
+        return numeroMatricula;
+    }
+    public int getEdad(){
+        return edad;
+    }
+    
+    
     /**
      * Cambia el nombre del alumno
      */
